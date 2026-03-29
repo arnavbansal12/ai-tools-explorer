@@ -38,3 +38,26 @@ input, select {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+/* Dark Mode Styles */
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.dark .card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark input,
+.dark select {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 10px;
+  cursor: pointer;
+}
