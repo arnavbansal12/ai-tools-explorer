@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Tools Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>AI Tools Explorer</h1>
+
+  <!-- Search -->
+  <input type="text" id="searchInput" placeholder="Search tools...">
+
+  <!-- Filter -->
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="writing">Writing</option>
+    <option value="image">Image</option>
+    <option value="coding">Coding</option>
+    <option value="video">Video</option>
+    <option value="audio">Audio</option>
+    <option value="productivity">Productivity</option>
+    <option value="research">Research</option>
+    <option value="website">Website</option>
+    <option value="presentation">Presentation</option>
+  </select>
+
+  <!-- Sort -->
+  <select id="sortOption">
+    <option value="default">Sort</option>
+    <option value="az">A-Z</option>
+    <option value="za">Z-A</option>
+  </select>
+
+  <!-- Container -->
+  <div id="toolsContainer"></div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
