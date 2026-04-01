@@ -1,5 +1,5 @@
-// API (JSON dataset)
-const API_URL = "./data.json";
+// fetching json file content from github therefore, using it as a API key
+const API_URL = "https://raw.githubusercontent.com/arnavbansal12/ai-tools-explorer/main/data.json";
 
 let tools = [];
 let filteredTools = [];
@@ -9,7 +9,7 @@ const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortOption = document.getElementById("sortOption");
 
-// Fetch Data
+// fetch data
 async function fetchTools() {
   try {
     container.innerHTML = "<p>Loading AI Tools...</p>";
@@ -26,7 +26,7 @@ async function fetchTools() {
   }
 }
 
-// Display
+// display
 function displayTools(data) {
   container.innerHTML = "";
 
@@ -44,7 +44,7 @@ function displayTools(data) {
   });
 }
 
-// Search
+// search
 searchInput.addEventListener("input", () => {
   const value = searchInput.value.toLowerCase();
 
@@ -55,14 +55,14 @@ searchInput.addEventListener("input", () => {
   applyFilters();
 });
 
-// Filter + Sort
+// filter + sort
 categoryFilter.addEventListener("change", applyFilters);
 sortOption.addEventListener("change", applyFilters);
 
 function applyFilters() {
   let result = [...filteredTools];
 
-  // Category Filter
+  // category filter
   if (categoryFilter.value !== "all") {
     result = result.filter(tool =>
       (tool.category || "").toLowerCase().includes(categoryFilter.value)
@@ -80,20 +80,20 @@ function applyFilters() {
 }
 
 
-// Start
+// start
 fetchTools();
 
 //dark theme
 
 const themeToggle = document.getElementById("themeToggle");
 
-// Load saved theme
+// load saved theme
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   themeToggle.textContent = "☀️ Light Mode";
 }
 
-// Toggle theme
+// toggle theme
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
