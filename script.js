@@ -1,4 +1,4 @@
-const API_URL = "https://raw.githubusercontent.com/arnavbansal12/ai-tools-explorer/main/data.json";
+const API_URL = "https://raw.githubusercontent.com/arnavbansal12/ai-tools-explorer/main/data.json?v=2.0";
 
 let tools = [];
 let filteredTools = [];
