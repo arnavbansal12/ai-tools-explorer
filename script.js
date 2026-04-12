@@ -67,7 +67,7 @@ sortOption.addEventListener("change", applyFilters);
 function applyFilters() {
   let result = [...filteredTools];
 
-  if ( categoryFilter.value !== "all" ) {
+  if (categoryFilter.value !== "all") {
     result = result.filter(tool =>
       (tool.category || "").toLowerCase().includes(categoryFilter.value)
     );
@@ -95,7 +95,7 @@ if (localStorage.getItem("theme") === "dark") {
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
-    if (document.body.classList.contains("dark")) {
+  if (document.body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
     themeToggle.textContent = "☀️ Light Mode";
   } else {
