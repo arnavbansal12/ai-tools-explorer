@@ -37,6 +37,14 @@ function displayTools(data) {
       <p>${tool.description || "No description available"}</p>
     `;
 
+    card.addEventListener("click", () => {
+      if (tool.website) {
+        window.open(tool.website, "_blank");
+      } else {
+        alert("Website not available for this tool.");
+      }
+    });
+
     container.appendChild(card);
   });
 }
