@@ -1,4 +1,3 @@
-// fetching json file content from github therefore, using it as a API key
 const API_URL = "https://raw.githubusercontent.com/arnavbansal12/ai-tools-explorer/main/data.json";
 
 let tools = [];
@@ -9,7 +8,6 @@ const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortOption = document.getElementById("sortOption");
 
-// fetch data
 async function fetchTools() {
   try {
     container.innerHTML = "<p>Loading AI Tools...</p>";
@@ -26,7 +24,6 @@ async function fetchTools() {
   }
 }
 
-// display
 function displayTools(data) {
   container.innerHTML = "";
 
@@ -44,7 +41,8 @@ function displayTools(data) {
   });
 }
 
-// search
+
+
 searchInput.addEventListener("input", () => {
   const value = searchInput.value.toLowerCase();
 
@@ -55,21 +53,18 @@ searchInput.addEventListener("input", () => {
   applyFilters();
 });
 
-// filter + sort
 categoryFilter.addEventListener("change", applyFilters);
 sortOption.addEventListener("change", applyFilters);
 
 function applyFilters() {
   let result = [...filteredTools];
 
-  // category filter
-  if (categoryFilter.value !== "all") {
+  if ( categoryFilter.value !== "all" ) {
     result = result.filter(tool =>
       (tool.category || "").toLowerCase().includes(categoryFilter.value)
     );
   }
 
-  // Sort
   if (sortOption.value === "az") {
     result.sort((a, b) => a.name.localeCompare(b.name));
   } else if (sortOption.value === "za") {
@@ -80,24 +75,19 @@ function applyFilters() {
 }
 
 
-// start
 fetchTools();
-
-//dark theme
 
 const themeToggle = document.getElementById("themeToggle");
 
-// load saved theme
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   themeToggle.textContent = "☀️ Light Mode";
 }
 
-// toggle theme
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
-  if (document.body.classList.contains("dark")) {
+    if (document.body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
     themeToggle.textContent = "☀️ Light Mode";
   } else {
